@@ -4,12 +4,14 @@ import { useState } from "react";
 import { Unit } from "@/lib/types";
 import VocabularyTab from "./VocabularyTab";
 import QawaidTab from "./QawaidTab";
+import AshwatTab from "./AshwatTab";
 import SpeakingTab from "./SpeakingTab";
 import QuizTab from "./QuizTab";
 
 const tabs = [
   { key: "vocabulary", label: "Kosakata", icon: "📇" },
   { key: "qawaid", label: "Kaidah", icon: "📐" },
+  { key: "ashwat", label: "Bunyi", icon: "👂" },
   { key: "speaking", label: "Bicara", icon: "🎙️" },
   { key: "quiz", label: "Kuis", icon: "🧩" },
 ] as const;
@@ -21,7 +23,7 @@ export default function UnitTabs({ unit }: { unit: Unit }) {
 
   return (
     <div>
-      <div className="mb-6 grid grid-cols-4 gap-1 rounded-2xl bg-slate-100 p-1">
+      <div className="mb-6 grid grid-cols-5 gap-1 rounded-2xl bg-slate-100 p-1">
         {tabs.map((t) => (
           <button
             key={t.key}
@@ -40,6 +42,7 @@ export default function UnitTabs({ unit }: { unit: Unit }) {
 
       {active === "vocabulary" && <VocabularyTab words={unit.vocabulary} />}
       {active === "qawaid" && <QawaidTab rules={unit.qawaid} />}
+      {active === "ashwat" && <AshwatTab lesson={unit.ashwat} />}
       {active === "speaking" && <SpeakingTab dialogue={unit.dialogue} />}
       {active === "quiz" && <QuizTab questions={unit.quiz} />}
     </div>

@@ -8,7 +8,7 @@ export type VocabWord = {
 export type QawaidExample = {
   ar: string;
   id: string;
-  // index ranges (word indices, split by space) to highlight with a color role
+  // index kata (dipisah spasi) yang diberi warna peran gramatikal
   highlights?: { wordIndex: number; role: "subject" | "verb" | "object" | "harf" }[];
 };
 
@@ -24,6 +24,21 @@ export type DialogueLine = {
   speaker: string;
   ar: string;
   id: string;
+};
+
+/** Pelajaran fonetik: membandingkan dua bunyi yang mirip. */
+export type AshwatLesson = {
+  title: string;
+  titleAr: string;
+  explanation: string;
+  /** Pasangan minimal: dua kata yang hanya beda pada bunyi yang dipelajari. */
+  contrasts: {
+    left: { ar: string; translit: string; id: string };
+    right: { ar: string; translit: string; id: string };
+  }[];
+  leftLabel: string;
+  rightLabel: string;
+  tip?: string;
 };
 
 export type QuizQuestion =
@@ -45,6 +60,31 @@ export type QuizQuestion =
       promptId: string;
       words: string[];
       correctOrder: number[];
+    }
+  | {
+      type: "truefalse";
+      statementAr: string;
+      statementId: string;
+      answer: boolean;
+    }
+  | {
+      type: "fillblank";
+      /** Kalimat dipecah jadi bagian sebelum dan sesudah rumpang (arah RTL). */
+      before: string;
+      after: string;
+      wordBox: string[];
+      answerIndex: number;
+      translationId: string;
+    }
+  | {
+      type: "matchpairs";
+      instruction: string;
+      pairs: { a: string; b: string }[];
+    }
+  | {
+      type: "categorize";
+      instruction: string;
+      categories: { name: string; words: string[] }[];
     };
 
 export type Unit = {
@@ -55,6 +95,7 @@ export type Unit = {
   color: string;
   vocabulary: VocabWord[];
   qawaid: QawaidRule[];
+  ashwat: AshwatLesson;
   dialogue: DialogueLine[];
   quiz: QuizQuestion[];
 };

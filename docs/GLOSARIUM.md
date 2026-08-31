@@ -1,95 +1,111 @@
 # Glosarium Kosakata
 
-Daftar seluruh kosakata yang sudah dipakai di aplikasi, dikelompokkan per unit.
-Gunakan daftar ini untuk menghindari pengulangan saat menambah unit baru.
+Daftar seluruh kosakata yang dipakai di aplikasi, dikelompokkan per wihdah.
+Gunakan daftar ini untuk menghindari pengulangan saat menambah materi baru.
 
 > Dibuat dari `src/lib/data.ts`. Perbarui saat menambah/mengubah kosakata.
 
-### Unit 1 — Perkenalan (التعارف)
+### Wihdah 1 — Menjaga Kesehatan (الْعِنَايَةُ بِالصِّحَّةِ)
 
 | Arab | Transliterasi | Arti |
 |---|---|---|
-| اِسْم | ism | nama |
-| صَدِيق | shadiiq | teman |
-| مُدَرِّس | mudarris | guru (laki-laki) |
-| طَالِب | thaalib | murid (laki-laki) |
-| مِنْ أَيْنَ | min ayna | dari mana |
-| بَلَد | balad | negara |
+| صِحَّة | shihhah | kesehatan |
+| مَرِيض | mariidh | orang sakit |
+| عِلَاج | 'ilaaj | pengobatan |
+| حِمْيَة | himyah | diet, pantangan makan |
+| صُدَاع | shudaa' | sakit kepala |
+| دَوَاء | dawaa' | obat |
+| رَاحَة | raahah | istirahat |
+| يَشْعُرُ | yasy'uru | (dia) merasakan |
 
-### Unit 2 — Di Rumah (فِي الْبَيْتِ)
-
-| Arab | Transliterasi | Arti |
-|---|---|---|
-| بَيْت | bait | rumah |
-| غُرْفَة | ghurfah | kamar |
-| مَطْبَخ | mathbakh | dapur |
-| بَاب | baab | pintu |
-| نَافِذَة | naafidzah | jendela |
-| كُرْسِيّ | kursiy | kursi |
-
-### Unit 3 — Di Sekolah (فِي الْمَدْرَسَةِ)
+### Wihdah 2 — Rekreasi (التَّرْوِيحُ عَنِ النَّفْسِ)
 
 | Arab | Transliterasi | Arti |
 |---|---|---|
-| مَدْرَسَة | madrasah | sekolah |
-| كِتَاب | kitaab | buku |
-| قَلَم | qalam | pena |
-| فَصْل | fashl | kelas |
-| يَكْتُبُ | yaktubu | (dia) menulis |
-| يَقْرَأُ | yaqra'u | (dia) membaca |
+| عُطْلَة | 'uthlah | liburan |
+| رِحْلَة | rihlah | perjalanan, tamasya |
+| شَاطِئ | syaathi' | pantai |
+| سِبَاحَة | sibaahah | berenang |
+| نُزْهَة | nuzhah | piknik, jalan-jalan |
+| مَلْعَب | mal'ab | lapangan |
+| هِوَايَة | hiwaayah | hobi |
+| يَسْتَمْتِعُ | yastamti'u | (dia) menikmati |
 
-### Unit 4 — Keluarga (الْأُسْرَة)
-
-| Arab | Transliterasi | Arti |
-|---|---|---|
-| أَب | ab | ayah |
-| أُمّ | umm | ibu |
-| أَخ | akh | saudara laki-laki |
-| أُخْت | ukht | saudara perempuan |
-| جَدّ | jadd | kakek |
-| جَدَّة | jaddah | nenek |
-
-### Unit 5 — Angka dan Warna (الْأَرْقَام وَالْأَلْوَان)
+### Wihdah 3 — Kehidupan Rumah Tangga (الْحَيَاةُ الزَّوْجِيَّةُ)
 
 | Arab | Transliterasi | Arti |
 |---|---|---|
-| وَاحِد | waahid | satu |
-| ثَلَاثَة | tsalaatsah | tiga |
-| أَحْمَر | ahmar | merah |
-| أَزْرَق | azraq | biru |
-| أَخْضَر | akhdhar | hijau |
-| أَصْفَر | ashfar | kuning |
+| زَوَاج | zawaaj | pernikahan |
+| خِطْبَة | khithbah | lamaran |
+| مَسْؤُولِيَّة | mas'uuliyyah | tanggung jawab |
+| تَفَاهُم | tafaahum | saling pengertian |
+| سَعَادَة | sa'aadah | kebahagiaan |
+| خِلَاف | khilaaf | perselisihan |
+| صَبْر | shabr | kesabaran |
+| أَخْلَاق | akhlaaq | akhlak, perangai |
 
-### Unit 6 — Aktivitas Harian (الْأَنْشِطَة الْيَوْمِيَّة)
-
-| Arab | Transliterasi | Arti |
-|---|---|---|
-| يَسْتَيْقِظُ | yastaiqizhu | (dia) bangun tidur |
-| يَذْهَبُ | yadzhabu | (dia) pergi |
-| يَأْكُلُ | ya'kulu | (dia) makan |
-| يَنَامُ | yanaamu | (dia) tidur |
-| يَلْعَبُ | yal'abu | (dia) bermain |
-| يُصَلِّي | yushallii | (dia) shalat |
-
-### Unit 7 — Profesi dan Tempat (الْمِهَن وَالْأَمَاكِن)
+### Wihdah 4 — Hidup di Kota (الْحَيَاةُ فِي الْمَدِينَةِ)
 
 | Arab | Transliterasi | Arti |
 |---|---|---|
-| طَبِيب | thabiib | dokter |
-| مُهَنْدِس | muhandis | insinyur |
-| تَاجِر | taajir | pedagang |
-| مُسْتَشْفَى | mustasyfaa | rumah sakit |
-| سُوق | suuq | pasar |
-| مَكْتَب | maktab | kantor |
+| مَدِينَة | madiinah | kota |
+| رِيف | riif | desa, pedesaan |
+| زِحَام | zihaam | kemacetan |
+| ضَجِيج | dhajiij | kebisingan |
+| تَلَوُّث | talawwuts | polusi |
+| مُوَاصَلَات | muwaashalaat | transportasi |
+| هُدُوء | huduu' | ketenangan |
+| شَارِع | syaari' | jalan |
 
-### Unit 8 — Waktu dan Cuaca (الْوَقْت وَالطَّقْس)
+### Wihdah 5 — Ilmu dan Belajar (الْعِلْمُ وَالتَّعَلُّمُ)
 
 | Arab | Transliterasi | Arti |
 |---|---|---|
-| السَّاعَة | as-saa'ah | jam/waktu |
-| يَوْم | yaum | hari |
-| حَارّ | haarr | panas |
-| بَارِد | baarid | dingin |
-| مُمْطِر | mumthir | hujan |
-| غَائِم | ghaa'im | berawan |
+| عِلْم | 'ilm | ilmu |
+| حَضَارَة | hadhaarah | peradaban |
+| بَحْث | bahts | penelitian |
+| اِخْتِرَاع | ikhtiraa' | penemuan |
+| مَكْتَبَة | maktabah | perpustakaan |
+| مِنْحَة | minhah | beasiswa |
+| تَقَدُّم | taqaddum | kemajuan |
+| يَجْتَهِدُ | yajtahidu | (dia) bersungguh-sungguh |
+
+### Wihdah 6 — Profesi (الْمِهَنُ)
+
+| Arab | Transliterasi | Arti |
+|---|---|---|
+| مِهْنَة | mihnah | profesi |
+| وَظِيفَة | wazhiifah | pekerjaan, jabatan |
+| مُقَابَلَة | muqaabalah | wawancara |
+| خِبْرَة | khibrah | pengalaman |
+| رَاتِب | raatib | gaji |
+| بَطَالَة | bathaalah | pengangguran |
+| شَهَادَة | syahaadah | ijazah |
+| يَتَقَدَّمُ | yataqaddamu | (dia) melamar, maju |
+
+### Wihdah 7 — Bahasa Arab (اللُّغَةُ الْعَرَبِيَّةُ)
+
+| Arab | Transliterasi | Arti |
+|---|---|---|
+| لُغَة | lughah | bahasa |
+| فُصْحَى | fushhaa | bahasa Arab baku |
+| لَهْجَة | lahjah | dialek |
+| قَامُوس | qaamuus | kamus |
+| نُطْق | nuthq | pelafalan |
+| تَرْجَمَة | tarjamah | terjemahan |
+| قَوَاعِد | qawaa'id | kaidah, tata bahasa |
+| يُتْقِنُ | yutqinu | (dia) menguasai |
+
+### Wihdah 8 — Penghargaan (الْجَوَائِزُ)
+
+| Arab | Transliterasi | Arti |
+|---|---|---|
+| جَائِزَة | jaa'izah | penghargaan, hadiah |
+| مُسَابَقَة | musaabaqah | lomba |
+| فَوْز | fauz | kemenangan |
+| تَهْنِئَة | tahni'ah | ucapan selamat |
+| تَفَوُّق | tafawwuq | keunggulan, prestasi |
+| جُهْد | juhd | usaha, jerih payah |
+| مُشَارِك | musyaarik | peserta |
+| يَسْتَحِقُّ | yastahiqqu | (dia) berhak, layak |
 

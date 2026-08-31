@@ -1,35 +1,49 @@
 # Rencana Kurikulum
 
-Urutan tema mengikuti alur umum pembelajaran bahasa Arab pemula → menengah.
-Semua isi materi ditulis orisinal untuk proyek ini.
+Tema dan cakupan kaidah mengikuti peta buku rujukan level menengah
+(`docs/PETA-BUKU-ABY2.md`), tetapi **seluruh isi materinya ditulis orisinal**
+untuk proyek ini.
 
-## Unit yang sudah ada
+## Wihdah yang sudah ada (level menengah)
 
-| # | Tema | Arab | Fokus kaidah |
-|---|------|------|--------------|
-| 1 | Perkenalan | التعارف | Kata tanya مَنْ / مَا |
-| 2 | Di Rumah | فِي الْبَيْتِ | Isim isyarah هَذَا / هَذِهِ |
-| 3 | Di Sekolah | فِي الْمَدْرَسَةِ | Fi'il mudhari' |
-| 4 | Keluarga | الْأُسْرَة | Dhamir muttashil (kepemilikan) |
-| 5 | Angka dan Warna | الْأَرْقَام وَالْأَلْوَان | Na'at–man'ut (sifat) |
-| 6 | Aktivitas Harian | الْأَنْشِطَة الْيَوْمِيَّة | Zharaf zaman + fi'il mudhari' |
-| 7 | Profesi dan Tempat | الْمِهَن وَالْأَمَاكِن | مَاذَا يَعْمَلُ؟ + يَعْمَلُ فِي |
-| 8 | Waktu dan Cuaca | الْوَقْت وَالطَّقْس | كَمِ السَّاعَة؟ / كَيْفَ الطَّقْسُ؟ |
+| # | Tema | Arab | Kaidah nahwu | Fonetik |
+|---|------|------|--------------|---------|
+| 1 | Menjaga Kesehatan | الْعِنَايَةُ بِالصِّحَّةِ | Huruf jar; لا nafiyah | Hamzah qath' vs alif washal |
+| 2 | Rekreasi | التَّرْوِيحُ عَنِ النَّفْسِ | Adawat istifham; لا nahiyah | Hamzah pendek vs alif mad |
+| 3 | Kehidupan Rumah Tangga | الْحَيَاةُ الزَّوْجِيَّةُ | Jumlah ismiyyah & fi'liyyah; dhamir rafa' munfashil | Wawu mad vs wawu konsonan |
+| 4 | Hidup di Kota | الْحَيَاةُ فِي الْمَدِينَةِ | Huruf 'athaf; mubtada' & khabar | Ya mad vs ya lin |
+| 5 | Ilmu dan Belajar | الْعِلْمُ وَالتَّعَلُّمُ | Jawazim mudhari'; mudhaf & mudhaf ilaih | Tasydid |
+| 6 | Profesi | الْمِهَنُ | Fi'il lazim & muta'addi; jama' muannats salim | Hamzah washal saat disambung |
+| 7 | Bahasa Arab | اللُّغَةُ الْعَرَبِيَّةُ | Isim maushul; kana wa akhawatuha | Hamzah washal vs qath' |
+| 8 | Penghargaan | الْجَوَائِزُ | Jama' mudzakkar salim; أن & لن penashab | Tanwin |
 
-## Kandidat unit berikutnya
+## Kandidat wihdah berikutnya (juz 2 buku rujukan)
 
-| Tema | Arab | Fokus kaidah yang bisa diangkat |
-|------|------|----------------------------------|
-| Makanan dan Minuman | الطَّعَام وَالشَّرَاب | Fi'il amr (kata perintah), أُرِيدُ |
-| Di Pasar / Berbelanja | فِي السُّوقِ | Angka lanjutan, بِكَمْ؟ (harga) |
-| Arah dan Petunjuk Jalan | الِاتِّجَاهَات | Zharaf makan (أَمَامَ، خَلْفَ، بَيْنَ) |
-| Kesehatan | الصِّحَّة | Jumlah ismiyyah untuk keluhan, أَشْعُرُ بِـ |
-| Perjalanan | السَّفَر | Fi'il madhi (kata kerja lampau) |
-| Hobi dan Olahraga | الْهِوَايَات وَالرِّيَاضَة | أُحِبُّ أَنْ + fi'il mudhari' |
+Buku rujukan memuat 16 wihdah; wihdah 9–16 ada di juz 2 dan belum dipetakan.
+Tema-tema yang lazim pada level ini dan bisa dikembangkan sendiri:
 
-## Catatan
+| Tema | Arab | Kaidah yang bisa diangkat |
+|------|------|---------------------------|
+| Perjalanan & transportasi | السَّفَر | Fi'il amr; isim tafdhil |
+| Makanan & undangan | الطَّعَام وَالضِّيَافَة | Tamyiz; 'adad ma'dud |
+| Media & berita | الْإِعْلَام | Fi'il majhul (bentuk pasif) |
+| Lingkungan | الْبِيئَة | Isim fa'il & isim maf'ul |
+| Teknologi | التِّقْنِيَة | Syarth (إِنْ، إِذَا) |
+| Ibadah & akhlak | الْعِبَادَة وَالْأَخْلَاق | Masdar; hal |
 
-- Tiap unit idealnya: 6 kosakata, 1 kaidah (dengan 2–3 contoh), 4 baris dialog,
-  3 soal kuis (campuran mcq / listen / order).
-- Tingkat kesulitan naik bertahap: unit 1–4 kalimat pendek, unit 5+ boleh
-  kalimat majemuk sederhana dengan ثُمَّ / وَ.
+## Standar isi tiap wihdah
+
+- **8 kosakata** dengan Arab berharakat, transliterasi, arti, dan emoji
+- **2 kaidah nahwu** — masing-masing dengan penjelasan, pola, dan 1–2 contoh kalimat
+  yang bisa diklik per kata
+- **1 pelajaran fonetik** — 3 pasang kata kontras yang bisa didengarkan
+- **6 baris dialog** dengan dua tokoh
+- **6 soal kuis** — campuran dari 7 tipe yang tersedia: `mcq`, `listen`, `order`,
+  `truefalse`, `fillblank`, `matchpairs`, `categorize`
+
+## Belum tergarap
+
+- Latihan menulis (ta'bir muwajjah) — misal menyusun kalimat jadi paragraf
+- Latihan imla' (dikte) — memanfaatkan TTS lalu pengguna mengetik yang didengar
+- Bacaan panjang (nash qira'i) dengan latihan pemahaman
+- Uji diri gabungan setiap 2 wihdah

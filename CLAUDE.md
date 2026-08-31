@@ -40,6 +40,8 @@ Setiap unit punya 4 menu: Kosakata, Kaidah, Bicara, Kuis.
 - `docs/KURIKULUM.md` — rencana tema dan urutan unit.
 - `docs/GAYA-KONTEN.md` — panduan gaya penulisan materi.
 - `docs/GLOSARIUM.md` — daftar kosakata yang sudah dipakai.
+- `docs/PETA-BUKU-ABY2.md` — peta tema & kaidah buku rujukan (struktur saja,
+  bukan isi materinya).
 
 ## Sebelum commit
 

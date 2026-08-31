@@ -1,7 +1,8 @@
 import { Unit } from "./types";
 
-// Data contoh (placeholder). Ganti dengan materi asli dari buku
-// (mis. Baina Yadaika 2) per unit/wihdah saat sudah tersedia.
+// Konten orisinal: kosakata, kaidah, dialog, dan kuis disusun sendiri
+// (bukan salinan dari buku ajar manapun), mengikuti alur tema umum
+// pembelajaran bahasa Arab pemula-menengah.
 export const units: Unit[] = [
   {
     id: 1,
@@ -197,6 +198,339 @@ export const units: Unit[] = [
         promptId: "Susun jadi: 'Murid itu menulis'",
         words: ["الطَّالِب", "يَكْتُبُ"],
         correctOrder: [0, 1],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Keluarga",
+    titleAr: "الْأُسْرَة",
+    theme: "Menyebutkan anggota keluarga dan kepemilikan",
+    color: "emerald",
+    vocabulary: [
+      { ar: "أَب", translit: "ab", id: "ayah", emoji: "👨" },
+      { ar: "أُمّ", translit: "umm", id: "ibu", emoji: "👩" },
+      { ar: "أَخ", translit: "akh", id: "saudara laki-laki", emoji: "🧑" },
+      { ar: "أُخْت", translit: "ukht", id: "saudara perempuan", emoji: "👧" },
+      { ar: "جَدّ", translit: "jadd", id: "kakek", emoji: "👴" },
+      { ar: "جَدَّة", translit: "jaddah", id: "nenek", emoji: "👵" },
+    ],
+    qawaid: [
+      {
+        title: "Kata ganti kepemilikan (dhamir muttashil)",
+        titleAr: "الضَّمَائِر الْمُتَّصِلَة",
+        explanation:
+          "Akhiran kata ganti seperti '-ي' (-ku), '-كَ' (-mu, lk), '-كِ' (-mu, pr) ditambahkan pada kata benda untuk menunjukkan kepemilikan.",
+        pattern: [
+          { label: "Ayahku", ar: "أَبِي" },
+          { label: "Ayahmu (lk)", ar: "أَبُوكَ" },
+          { label: "Ibumu (pr)", ar: "أُمُّكِ" },
+        ],
+        examples: [
+          {
+            ar: "هَذَا أَبِي",
+            id: "Ini ayahku",
+            highlights: [{ wordIndex: 1, role: "subject" }],
+          },
+          {
+            ar: "هَذِهِ أُخْتِي الصَّغِيرَة",
+            id: "Ini adikku (saudara perempuan yang kecil)",
+            highlights: [{ wordIndex: 1, role: "subject" }],
+          },
+        ],
+      },
+    ],
+    dialogue: [
+      { speaker: "خالد", ar: "كَمْ فَرْدًا فِي أُسْرَتِكَ؟", id: "Berapa anggota keluargamu?" },
+      { speaker: "يوسف", ar: "أُسْرَتِي خَمْسَة: أَبِي وَأُمِّي وَأَخِي وَأُخْتِي وَأَنَا", id: "Keluargaku lima orang: ayahku, ibuku, saudaraku, saudariku, dan aku" },
+      { speaker: "خالد", ar: "هَلْ جَدُّكَ يَسْكُنُ مَعَكُمْ؟", id: "Apakah kakekmu tinggal bersama kalian?" },
+      { speaker: "يوسف", ar: "نَعَمْ، جَدِّي وَجَدَّتِي يَسْكُنَانِ مَعَنَا", id: "Ya, kakek dan nenekku tinggal bersama kami" },
+    ],
+    quiz: [
+      {
+        type: "mcq",
+        prompt: "'أُخْت' artinya...",
+        options: ["Saudara laki-laki", "Saudara perempuan", "Ibu", "Nenek"],
+        answerIndex: 1,
+      },
+      {
+        type: "listen",
+        audioText: "هَذَا أَبِي",
+        options: ["Ini ibuku", "Ini ayahku", "Ini kakekku", "Ini saudaraku"],
+        answerIndex: 1,
+      },
+      {
+        type: "order",
+        promptId: "Susun jadi: 'Ini nenekku'",
+        words: ["هَذِهِ", "جَدَّتِي"],
+        correctOrder: [0, 1],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Angka dan Warna",
+    titleAr: "الْأَرْقَام وَالْأَلْوَان",
+    theme: "Menghitung benda dan menyebutkan warna",
+    color: "sky",
+    vocabulary: [
+      { ar: "وَاحِد", translit: "waahid", id: "satu", emoji: "1️⃣" },
+      { ar: "ثَلَاثَة", translit: "tsalaatsah", id: "tiga", emoji: "3️⃣" },
+      { ar: "أَحْمَر", translit: "ahmar", id: "merah", emoji: "🔴" },
+      { ar: "أَزْرَق", translit: "azraq", id: "biru", emoji: "🔵" },
+      { ar: "أَخْضَر", translit: "akhdhar", id: "hijau", emoji: "🟢" },
+      { ar: "أَصْفَر", translit: "ashfar", id: "kuning", emoji: "🟡" },
+    ],
+    qawaid: [
+      {
+        title: "Sifat mengikuti benda (na'at-man'ut)",
+        titleAr: "النَّعْت وَالْمَنْعُوت",
+        explanation:
+          "Kata sifat (termasuk warna) diletakkan setelah kata benda, dan mengikuti bentuk mudzakkar/muannats-nya.",
+        pattern: [
+          { label: "Buku merah (mudzakkar)", ar: "كِتَاب أَحْمَر" },
+          { label: "Tas merah (muannats)", ar: "حَقِيبَة حَمْرَاء" },
+        ],
+        examples: [
+          {
+            ar: "عِنْدِي كِتَابٌ أَخْضَر",
+            id: "Aku punya buku hijau",
+            highlights: [
+              { wordIndex: 1, role: "object" },
+              { wordIndex: 2, role: "subject" },
+            ],
+          },
+        ],
+      },
+    ],
+    dialogue: [
+      { speaker: "نورة", ar: "كَمْ كِتَابًا عِنْدَكِ؟", id: "Berapa buku yang kamu punya?" },
+      { speaker: "هند", ar: "عِنْدِي ثَلَاثَة كُتُب", id: "Aku punya tiga buku" },
+      { speaker: "نورة", ar: "مَا لَوْنُ حَقِيبَتِكِ؟", id: "Apa warna tasmu?" },
+      { speaker: "هند", ar: "حَقِيبَتِي زَرْقَاء", id: "Tasku biru" },
+    ],
+    quiz: [
+      {
+        type: "mcq",
+        prompt: "'أَحْمَر' artinya...",
+        options: ["Biru", "Hijau", "Merah", "Kuning"],
+        answerIndex: 2,
+      },
+      {
+        type: "mcq",
+        prompt: "'ثَلَاثَة' artinya angka...",
+        options: ["1", "2", "3", "4"],
+        answerIndex: 2,
+      },
+      {
+        type: "order",
+        promptId: "Susun jadi: 'Aku punya tiga buku'",
+        words: ["عِنْدِي", "ثَلَاثَة", "كُتُب"],
+        correctOrder: [0, 1, 2],
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Aktivitas Harian",
+    titleAr: "الْأَنْشِطَة الْيَوْمِيَّة",
+    theme: "Menceritakan kegiatan sehari-hari",
+    color: "amber",
+    vocabulary: [
+      { ar: "يَسْتَيْقِظُ", translit: "yastaiqizhu", id: "(dia) bangun tidur", emoji: "⏰" },
+      { ar: "يَذْهَبُ", translit: "yadzhabu", id: "(dia) pergi", emoji: "🚶" },
+      { ar: "يَأْكُلُ", translit: "ya'kulu", id: "(dia) makan", emoji: "🍽️" },
+      { ar: "يَنَامُ", translit: "yanaamu", id: "(dia) tidur", emoji: "😴" },
+      { ar: "يَلْعَبُ", translit: "yal'abu", id: "(dia) bermain", emoji: "⚽" },
+      { ar: "يُصَلِّي", translit: "yushallii", id: "(dia) shalat", emoji: "🕌" },
+    ],
+    qawaid: [
+      {
+        title: "Keterangan waktu dengan fi'il mudhari'",
+        titleAr: "ظَرْف الزَّمَان مَعَ الْفِعْل الْمُضَارِع",
+        explanation:
+          "Keterangan waktu seperti 'كُلَّ يَوْمٍ' (setiap hari) atau 'صَبَاحًا' (di pagi hari) biasa diletakkan setelah fi'il mudhari' untuk menjelaskan kapan aktivitas dilakukan.",
+        pattern: [
+          { label: "setiap hari", ar: "كُلَّ يَوْمٍ" },
+          { label: "di pagi hari", ar: "صَبَاحًا" },
+        ],
+        examples: [
+          {
+            ar: "أَنَا أَسْتَيْقِظُ مُبَكِّرًا",
+            id: "Aku bangun pagi-pagi",
+            highlights: [
+              { wordIndex: 0, role: "subject" },
+              { wordIndex: 1, role: "verb" },
+            ],
+          },
+        ],
+      },
+    ],
+    dialogue: [
+      { speaker: "سعيد", ar: "مَاذَا تَفْعَلُ صَبَاحًا؟", id: "Apa yang kamu lakukan di pagi hari?" },
+      { speaker: "كريم", ar: "أَسْتَيْقِظُ ثُمَّ أُصَلِّي ثُمَّ أَذْهَبُ إِلَى الْمَدْرَسَةِ", id: "Aku bangun, lalu shalat, lalu pergi ke sekolah" },
+      { speaker: "سعيد", ar: "وَمَاذَا تَفْعَلُ مَسَاءً؟", id: "Dan apa yang kamu lakukan di sore hari?" },
+      { speaker: "كريم", ar: "أَلْعَبُ قَلِيلًا ثُمَّ أَنَامُ", id: "Aku bermain sebentar lalu tidur" },
+    ],
+    quiz: [
+      {
+        type: "mcq",
+        prompt: "'يَأْكُلُ' artinya...",
+        options: ["(dia) tidur", "(dia) bermain", "(dia) makan", "(dia) pergi"],
+        answerIndex: 2,
+      },
+      {
+        type: "listen",
+        audioText: "أَنَا أَسْتَيْقِظُ مُبَكِّرًا",
+        options: [
+          "Aku tidur larut",
+          "Aku bangun pagi-pagi",
+          "Aku pergi ke sekolah",
+          "Aku bermain sebentar",
+        ],
+        answerIndex: 1,
+      },
+      {
+        type: "order",
+        promptId: "Susun jadi: 'Aku pergi ke sekolah'",
+        words: ["أَذْهَبُ", "إِلَى", "الْمَدْرَسَةِ"],
+        correctOrder: [0, 1, 2],
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Profesi dan Tempat",
+    titleAr: "الْمِهَن وَالْأَمَاكِن",
+    theme: "Menyebutkan pekerjaan dan tempat bekerja",
+    color: "emerald",
+    vocabulary: [
+      { ar: "طَبِيب", translit: "thabiib", id: "dokter", emoji: "🩺" },
+      { ar: "مُهَنْدِس", translit: "muhandis", id: "insinyur", emoji: "👷" },
+      { ar: "تَاجِر", translit: "taajir", id: "pedagang", emoji: "🛍️" },
+      { ar: "مُسْتَشْفَى", translit: "mustasyfaa", id: "rumah sakit", emoji: "🏥" },
+      { ar: "سُوق", translit: "suuq", id: "pasar", emoji: "🏪" },
+      { ar: "مَكْتَب", translit: "maktab", id: "kantor", emoji: "🏢" },
+    ],
+    qawaid: [
+      {
+        title: "Bertanya tentang pekerjaan dengan 'ماذا يعمل'",
+        titleAr: "مَاذَا يَعْمَلُ؟",
+        explanation:
+          "'مَاذَا يَعْمَلُ...؟' dipakai menanyakan pekerjaan seseorang, dijawab dengan 'هُوَ + profesi' atau '...يَعْمَلُ فِي + tempat'.",
+        pattern: [
+          { label: "Apa pekerjaannya?", ar: "مَاذَا يَعْمَلُ؟" },
+          { label: "Dia bekerja di...", ar: "هُوَ يَعْمَلُ فِي..." },
+        ],
+        examples: [
+          {
+            ar: "أَبِي طَبِيب فِي الْمُسْتَشْفَى",
+            id: "Ayahku dokter di rumah sakit",
+            highlights: [
+              { wordIndex: 0, role: "subject" },
+              { wordIndex: 1, role: "object" },
+            ],
+          },
+        ],
+      },
+    ],
+    dialogue: [
+      { speaker: "ليلى", ar: "مَاذَا يَعْمَلُ وَالِدُكَ؟", id: "Apa pekerjaan ayahmu?" },
+      { speaker: "عمر", ar: "هُوَ مُهَنْدِس، يَعْمَلُ فِي مَكْتَبٍ كَبِيرٍ", id: "Dia insinyur, bekerja di kantor besar" },
+      { speaker: "ليلى", ar: "وَأَيْنَ تَعْمَلُ أُمُّكَ؟", id: "Dan di mana ibumu bekerja?" },
+      { speaker: "عمر", ar: "أُمِّي طَبِيبَة، تَعْمَلُ فِي الْمُسْتَشْفَى", id: "Ibuku dokter, bekerja di rumah sakit" },
+    ],
+    quiz: [
+      {
+        type: "mcq",
+        prompt: "'مُهَنْدِس' artinya...",
+        options: ["Dokter", "Pedagang", "Insinyur", "Guru"],
+        answerIndex: 2,
+      },
+      {
+        type: "listen",
+        audioText: "أَبِي طَبِيب فِي الْمُسْتَشْفَى",
+        options: [
+          "Ayahku insinyur di kantor",
+          "Ayahku dokter di rumah sakit",
+          "Ayahku pedagang di pasar",
+          "Ayahku guru di sekolah",
+        ],
+        answerIndex: 1,
+      },
+      {
+        type: "order",
+        promptId: "Susun jadi: 'Dia bekerja di pasar'",
+        words: ["هُوَ", "يَعْمَلُ", "فِي", "السُّوقِ"],
+        correctOrder: [0, 1, 2, 3],
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Waktu dan Cuaca",
+    titleAr: "الْوَقْت وَالطَّقْس",
+    theme: "Menyebutkan jam, hari, dan keadaan cuaca",
+    color: "sky",
+    vocabulary: [
+      { ar: "السَّاعَة", translit: "as-saa'ah", id: "jam/waktu", emoji: "🕐" },
+      { ar: "يَوْم", translit: "yaum", id: "hari", emoji: "📅" },
+      { ar: "حَارّ", translit: "haarr", id: "panas", emoji: "☀️" },
+      { ar: "بَارِد", translit: "baarid", id: "dingin", emoji: "❄️" },
+      { ar: "مُمْطِر", translit: "mumthir", id: "hujan", emoji: "🌧️" },
+      { ar: "غَائِم", translit: "ghaa'im", id: "berawan", emoji: "☁️" },
+    ],
+    qawaid: [
+      {
+        title: "Bertanya waktu dan cuaca",
+        titleAr: "كَمِ السَّاعَة؟ وَكَيْفَ الطَّقْس؟",
+        explanation:
+          "'كَمِ السَّاعَة؟' untuk menanyakan jam, dijawab 'السَّاعَة + angka'. 'كَيْفَ الطَّقْسُ؟' untuk menanyakan cuaca, dijawab dengan kata sifat cuaca.",
+        pattern: [
+          { label: "Jam berapa?", ar: "كَمِ السَّاعَة؟" },
+          { label: "Bagaimana cuacanya?", ar: "كَيْفَ الطَّقْسُ؟" },
+        ],
+        examples: [
+          {
+            ar: "الطَّقْسُ حَارٌّ الْيَوْمَ",
+            id: "Cuaca hari ini panas",
+            highlights: [
+              { wordIndex: 0, role: "subject" },
+              { wordIndex: 1, role: "object" },
+            ],
+          },
+        ],
+      },
+    ],
+    dialogue: [
+      { speaker: "منى", ar: "كَمِ السَّاعَة الْآنَ؟", id: "Jam berapa sekarang?" },
+      { speaker: "زيد", ar: "السَّاعَة السَّابِعَة صَبَاحًا", id: "Jam tujuh pagi" },
+      { speaker: "منى", ar: "كَيْفَ الطَّقْسُ الْيَوْمَ؟", id: "Bagaimana cuaca hari ini?" },
+      { speaker: "زيد", ar: "الطَّقْسُ بَارِدٌ وَغَائِم", id: "Cuacanya dingin dan berawan" },
+    ],
+    quiz: [
+      {
+        type: "mcq",
+        prompt: "'حَارّ' artinya...",
+        options: ["Dingin", "Panas", "Berawan", "Hujan"],
+        answerIndex: 1,
+      },
+      {
+        type: "listen",
+        audioText: "الطَّقْسُ حَارٌّ الْيَوْمَ",
+        options: [
+          "Cuaca hari ini dingin",
+          "Cuaca hari ini panas",
+          "Cuaca hari ini berawan",
+          "Cuaca hari ini hujan",
+        ],
+        answerIndex: 1,
+      },
+      {
+        type: "order",
+        promptId: "Susun jadi: 'Jam tujuh pagi'",
+        words: ["السَّاعَة", "السَّابِعَة", "صَبَاحًا"],
+        correctOrder: [0, 1, 2],
       },
     ],
   },

@@ -1,7 +1,13 @@
 import { notFound } from "next/navigation";
-import { getUnit } from "@/lib/data";
+import { getUnit, units } from "@/lib/data";
 import UnitTabs from "@/components/UnitTabs";
 import Link from "next/link";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return units.map((unit) => ({ id: String(unit.id) }));
+}
 
 export default async function UnitPage({
   params,

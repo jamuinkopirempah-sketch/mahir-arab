@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { DialogueLine } from "@/lib/types";
-import { speakArabic } from "@/lib/speech";
+import { Dialogue } from "@/lib/types";
+import { speakSequence, stopSpeaking } from "@/lib/speech";
 import AudioButton from "./AudioButton";
 
 function useRecorder() {
@@ -87,37 +87,36 @@ function RecordWidget({ label }: { label: string }) {
   );
 }
 
-export default function SpeakingTab({ dialogue }: { dialogue: DialogueLine[] }) {
-  const speakers = Array.from(new Set(dialogue.map((d) => d.speaker)));
+function DialoguePanel({ dialogue }: { dialogue: Dialogue }) {
+  const speakers = Array.from(new Set(dialogue.lines.map((d) => d.speaker)));
   const [myRole, setMyRole] = useState<string>(speakers[0]);
+  const [showId, setShowId] = useState(true);
   const [playing, setPlaying] = useState(false);
 
   async function playAll() {
     setPlaying(true);
-    for (const line of dialogue) {
-      await new Promise<void>((resolve) => {
-        speakArabic(line.ar);
-        const check = setInterval(() => {
-          if (!window.speechSynthesis.speaking) {
-            clearInterval(check);
-            resolve();
-          }
-        }, 150);
-      });
-      await new Promise((r) => setTimeout(r, 250));
-    }
+    await speakSequence(dialogue.lines.map((l) => l.ar));
+    setPlaying(false);
+  }
+
+  function stop() {
+    stopSpeaking();
     setPlaying(false);
   }
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-center gap-3">
+      <p className="mb-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-900">
+        {dialogue.setting}
+      </p>
+
+      <div className="mb-4 flex flex-wrap items-center gap-2">
         <span className="text-sm font-medium text-slate-600">Peranmu:</span>
         {speakers.map((s) => (
           <button
             key={s}
             onClick={() => setMyRole(s)}
-            className={`rounded-full px-3 py-1 text-sm font-arabic transition ${
+            className={`rounded-full px-3 py-1 font-arabic text-sm transition ${
               myRole === s
                 ? "bg-emerald-600 text-white"
                 : "bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
@@ -127,16 +126,21 @@ export default function SpeakingTab({ dialogue }: { dialogue: DialogueLine[] }) 
           </button>
         ))}
         <button
-          onClick={playAll}
-          disabled={playing}
-          className="ml-auto rounded-full bg-amber-500 px-4 py-1.5 text-sm font-medium text-white shadow hover:bg-amber-600 disabled:opacity-50"
+          onClick={() => setShowId((v) => !v)}
+          className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-600 transition hover:bg-slate-200"
         >
-          {playing ? "Memutar..." : "▶ Putar dialog"}
+          {showId ? "Sembunyikan arti" : "Tampilkan arti"}
+        </button>
+        <button
+          onClick={playing ? stop : playAll}
+          className="ml-auto rounded-full bg-amber-500 px-4 py-1.5 text-sm font-medium text-white shadow transition hover:bg-amber-600"
+        >
+          {playing ? "■ Hentikan" : "▶ Putar dialog"}
         </button>
       </div>
 
       <div className="flex flex-col gap-3">
-        {dialogue.map((line, i) => {
+        {dialogue.lines.map((line, i) => {
           const isMine = line.speaker === myRole;
           return (
             <div
@@ -151,17 +155,49 @@ export default function SpeakingTab({ dialogue }: { dialogue: DialogueLine[] }) 
                 {line.speaker} {isMine && "(giliranmu 🎙️)"}
               </div>
               <div className="flex items-center gap-2">
-                <AudioButton text={line.ar} className="h-7 w-7 text-sm shrink-0" />
+                <AudioButton text={line.ar} className="h-7 w-7 shrink-0 text-sm" />
                 <span dir="rtl" className="font-arabic text-xl">
                   {line.ar}
                 </span>
               </div>
-              <div className="mt-1 text-sm text-slate-500">{line.id}</div>
+              {showId && <div className="mt-1 text-sm text-slate-500">{line.id}</div>}
               {isMine && <RecordWidget label="Rekam & bandingkan" />}
             </div>
           );
         })}
       </div>
+    </div>
+  );
+}
+
+export default function SpeakingTab({ dialogues }: { dialogues: Dialogue[] }) {
+  const [active, setActive] = useState(0);
+
+  return (
+    <div>
+      <div className="mb-4 grid gap-1 rounded-2xl bg-slate-100 p-1 sm:grid-cols-2">
+        {dialogues.map((d, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              stopSpeaking();
+              setActive(i);
+            }}
+            className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
+              active === i
+                ? "bg-white text-emerald-700 shadow"
+                : "text-slate-500 hover:text-emerald-600"
+            }`}
+          >
+            <span className="block">Hiwar {i + 1} — {d.title}</span>
+            <span dir="rtl" className="block font-arabic text-base">
+              {d.titleAr}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <DialoguePanel key={active} dialogue={dialogues[active]} />
     </div>
   );
 }

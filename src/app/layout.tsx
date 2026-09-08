@@ -1,34 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Noto_Naskh_Arabic } from "next/font/google";
+import SiteHeader from "@/components/SiteHeader";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const notoArabic = Noto_Naskh_Arabic({
-  variable: "--font-arabic",
-  subsets: ["arabic"],
-});
-
 export const metadata: Metadata = {
-  title: "Belajar Bahasa Arab Interaktif",
-  description: "Aplikasi pendamping buku ajar bahasa Arab: kosakata, kaidah, bicara, dan kuis.",
+  title: "Mahir Arab — Belajar Bahasa Arab",
+  description: "Ruang belajar bahasa Arab interaktif: kosakata, kaidah, menyimak, dan latihan.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="id"
-      className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
+      <body className="min-h-full flex flex-col bg-[#f8f5ed] text-slate-900">
+        <SiteHeader />
         {children}
       </body>
     </html>

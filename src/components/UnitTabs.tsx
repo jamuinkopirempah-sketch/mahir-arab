@@ -5,14 +5,18 @@ import { Unit } from "@/lib/types";
 import VocabularyTab from "./VocabularyTab";
 import QawaidTab from "./QawaidTab";
 import AshwatTab from "./AshwatTab";
+import IstimaTab from "./IstimaTab";
 import SpeakingTab from "./SpeakingTab";
+import QiraahTab from "./QiraahTab";
 import QuizTab from "./QuizTab";
 
 const tabs = [
   { key: "vocabulary", label: "Kosakata", icon: "📇" },
-  { key: "qawaid", label: "Kaidah", icon: "📐" },
   { key: "ashwat", label: "Bunyi", icon: "👂" },
-  { key: "speaking", label: "Bicara", icon: "🎙️" },
+  { key: "istima", label: "Istima'", icon: "🎧" },
+  { key: "speaking", label: "Hiwar", icon: "🎙️" },
+  { key: "qiraah", label: "Qiroah", icon: "📖" },
+  { key: "qawaid", label: "Kaidah", icon: "📐" },
   { key: "quiz", label: "Kuis", icon: "🧩" },
 ] as const;
 
@@ -22,16 +26,16 @@ export default function UnitTabs({ unit }: { unit: Unit }) {
   const [active, setActive] = useState<TabKey>("vocabulary");
 
   return (
-    <div>
-      <div className="mb-6 grid grid-cols-5 gap-1 rounded-2xl bg-slate-100 p-1">
+    <div className="pb-10">
+      <div className="mb-6 flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:grid sm:grid-cols-7 sm:overflow-visible sm:rounded-2xl sm:bg-[#e8eee7] sm:p-1.5">
         {tabs.map((t) => (
           <button
             key={t.key}
             onClick={() => setActive(t.key)}
-            className={`flex flex-col items-center gap-0.5 rounded-xl py-2 text-xs font-medium transition sm:text-sm ${
+            className={`flex min-w-[76px] flex-col items-center gap-0.5 rounded-xl px-2 py-2.5 text-xs font-bold transition sm:min-w-0 sm:text-sm ${
               active === t.key
-                ? "bg-white text-emerald-700 shadow"
-                : "text-slate-500 hover:text-emerald-600"
+                ? "bg-[#0d6b60] text-white shadow-sm sm:bg-white sm:text-[#0d6b60]"
+                : "bg-white text-[#70827b] ring-1 ring-[#dce6dc] hover:text-[#0d6b60] sm:bg-transparent sm:ring-0"
             }`}
           >
             <span className="text-lg">{t.icon}</span>
@@ -41,9 +45,11 @@ export default function UnitTabs({ unit }: { unit: Unit }) {
       </div>
 
       {active === "vocabulary" && <VocabularyTab words={unit.vocabulary} />}
-      {active === "qawaid" && <QawaidTab rules={unit.qawaid} />}
       {active === "ashwat" && <AshwatTab lesson={unit.ashwat} />}
-      {active === "speaking" && <SpeakingTab dialogue={unit.dialogue} />}
+      {active === "istima" && <IstimaTab lesson={unit.istima} />}
+      {active === "speaking" && <SpeakingTab dialogues={unit.dialogues} />}
+      {active === "qiraah" && <QiraahTab text={unit.qiraah} />}
+      {active === "qawaid" && <QawaidTab rules={unit.qawaid} />}
       {active === "quiz" && <QuizTab questions={unit.quiz} />}
     </div>
   );

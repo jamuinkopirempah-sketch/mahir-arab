@@ -3,7 +3,8 @@
 # Proyek: Web App Belajar Bahasa Arab Interaktif
 
 Aplikasi pendamping belajar bahasa Arab (Next.js + Tailwind + Framer Motion).
-Setiap unit punya 4 menu: Kosakata, Kaidah, Bicara, Kuis.
+Setiap wihdah punya 7 menu, urutannya mengikuti alur buku rujukan:
+Kosakata → Bunyi (ashwat) → Istima' → Hiwar → Qiroah → Kaidah → Kuis.
 
 ## Aturan konten (WAJIB)
 
@@ -25,6 +26,17 @@ Setiap unit punya 4 menu: Kosakata, Kaidah, Bicara, Kuis.
 - Untuk kata kerja, tulis artinya dengan penanda pelaku, mis. "(dia) menulis".
 - Hindari mengulang kosakata yang sudah dipakai di unit lain — cek
   `docs/GLOSARIUM.md`.
+
+### Takaran tiap wihdah
+
+- **Istima'** (`unit.istima`): satu audio pengantar sesuai judul wihdah, lalu
+  4 butir simakan. Tiap butir = audio + pertanyaan pilihan ganda; teks Arabnya
+  baru dibuka setelah pengguna menjawab.
+- **Hiwar** (`unit.dialogues`): dua dialog, masing-masing 12–14 giliran bicara.
+  Tiap dialog punya `setting` (latar situasi dalam bahasa Indonesia).
+- **Qiroah** (`unit.qiraah`): satu nash qira'i, 5 paragraf panjang, didahului
+  `preVocab` (6–8 kata baru) dan ditutup 4 pertanyaan pemahaman berikut
+  jawabannya dalam bahasa Arab dan Indonesia.
 
 ## Struktur kode
 

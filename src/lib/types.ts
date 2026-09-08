@@ -26,6 +26,49 @@ export type DialogueLine = {
   id: string;
 };
 
+/** Satu hiwar utuh. Tiap wihdah punya dua, seperti pola buku rujukan. */
+export type Dialogue = {
+  title: string;
+  titleAr: string;
+  /** Latar situasi, dibaca sebelum dialog dimulai. */
+  setting: string;
+  lines: DialogueLine[];
+};
+
+/** Kosakata pendukung teks — tanpa emoji, karena disajikan sebagai glosarium. */
+export type GlossItem = {
+  ar: string;
+  translit: string;
+  id: string;
+};
+
+/** Nash qira'i: teks bacaan panjang, didahului kosakata barunya. */
+export type QiraahText = {
+  title: string;
+  titleAr: string;
+  /** Kosakata baru yang muncul di teks — dipelajari sebelum membaca. */
+  preVocab: GlossItem[];
+  paragraphs: { ar: string; id: string }[];
+  /** Pertanyaan pemahaman; jawabannya disembunyikan sampai diminta. */
+  questions: { ar: string; id: string; answerAr: string; answerId: string }[];
+};
+
+/** Fahm al-masmu': latihan menyimak, teks baru dibuka setelah audio diputar. */
+export type IstimaLesson = {
+  title: string;
+  titleAr: string;
+  /** Audio pembuka yang mengantar tema wihdah. */
+  intro: { ar: string; id: string };
+  /** Butir simakan, dikerjakan satu per satu. */
+  items: {
+    ar: string;
+    id: string;
+    question: string;
+    options: string[];
+    answerIndex: number;
+  }[];
+};
+
 /** Pelajaran fonetik: membandingkan dua bunyi yang mirip. */
 export type AshwatLesson = {
   title: string;
@@ -96,6 +139,8 @@ export type Unit = {
   vocabulary: VocabWord[];
   qawaid: QawaidRule[];
   ashwat: AshwatLesson;
-  dialogue: DialogueLine[];
+  istima: IstimaLesson;
+  dialogues: Dialogue[];
+  qiraah: QiraahText;
   quiz: QuizQuestion[];
 };

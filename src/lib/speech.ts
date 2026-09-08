@@ -12,3 +12,24 @@ export function speakArabic(text: string) {
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utter);
 }
+
+/** Membaca beberapa teks berurutan, menunggu tiap potongan selesai. */
+export async function speakSequence(texts: string[], gapMs = 250) {
+  for (const text of texts) {
+    speakArabic(text);
+    await new Promise<void>((resolve) => {
+      const check = setInterval(() => {
+        if (!window.speechSynthesis.speaking) {
+          clearInterval(check);
+          resolve();
+        }
+      }, 150);
+    });
+    await new Promise((r) => setTimeout(r, gapMs));
+  }
+}
+
+export function stopSpeaking() {
+  if (typeof window === "undefined" || !window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+}
